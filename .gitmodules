@@ -21,3 +21,7 @@
 [submodule "lib/pico-sdk"]
 	path = lib/pico-sdk
 	url = https://github.com/qmk/pico-sdk.git
+[submodule "users/wiiplayer2"]
+	path = users/wiiplayer2
+	url = git@github.com:WiiPlayer2/qmk_keymap.git
+	branch = main
