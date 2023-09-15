@@ -1,4 +1,10 @@
+#ifdef QMK_KEYBOARD_H
 #include QMK_KEYBOARD_H
+#else
+// only for intellisense
+#include "quantum/quantum.h"
+#include "config.h"
+#endif
 
 void keyboard_post_init_user(void) {
   // Customise these values to desired behaviour
