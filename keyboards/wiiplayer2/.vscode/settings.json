@@ -1,4 +1,12 @@
 {
     "git.autoRepositoryDetection": false,
-    "git.detectSubmodules": false
+    "git.detectSubmodules": false,
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "info.json"
+            ],
+            "url": "https://github.com/qmk/qmk_firmware/raw/master/data/schemas/keyboard.jsonschema"
+        }
+    ]
 }

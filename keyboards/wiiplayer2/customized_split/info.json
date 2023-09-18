@@ -9,7 +9,7 @@
         "console": true
     },
     "matrix_pins": {
-        "cols": ["D1", "D0", "D4", "C6", "D7", "E6"],
+        "cols": ["E6", "D7", "C6", "D4", "D0", "D1"],
         "rows": ["F4", "F5", "F6", "F7", "B1", "B3"]
     },
     "split": {
@@ -22,6 +22,16 @@
         "device_version": "1.0.0",
         "pid": "0x0000",
         "vid": "0xFEED"
+    },
+    "rgb_matrix": {
+        "driver": "ws2812",
+        "split_count": [
+            30,
+            30
+        ]
+    },
+    "bootmagic": {
+        "enabled": true
     },
     "layouts": {
         "LAYOUT": {
