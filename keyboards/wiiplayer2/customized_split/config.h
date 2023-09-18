@@ -19,5 +19,4 @@
 //#define NO_ACTION_TAPPING
 //#define NO_ACTION_ONESHOT
 
-#define WS2812_DI_PIN B2
 #define RGB_MATRIX_LED_COUNT 60
