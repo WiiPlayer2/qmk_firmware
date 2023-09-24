@@ -25,7 +25,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       *               ┌───┬───┬───┐   ┌───┬───┬───┐
       *               │   │   │   │   │   │   │   │
       *               ├───┼───┼───┤   ├───┼───┼───┤
-      *               │(1)│   │   │   │   │   │   │
+      *               │(1)│   │Bsp│   │   │   │   │
       *               └───┴───┴───┘   └───┴───┴───┘
       */
     [0] = LAYOUT(
@@ -34,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LEFT_SHIFT,  KC_A,       KC_S,       KC_D,       KC_F,       KC_G,               XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,
         KC_LEFT_CTRL,   KC_Z,       KC_X,       KC_C,       KC_V,       KC_B,               XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,
                                                 XXXXXXX,    XXXXXXX,    XXXXXXX,            XXXXXXX,    XXXXXXX,    XXXXXXX,
-                                                MO(1),      KC_SPACE,   XXXXXXX,            XXXXXXX,    XXXXXXX,    XXXXXXX
+                                                MO(1),      KC_SPACE,   KC_BACKSPACE,       XXXXXXX,    XXXXXXX,    XXXXXXX
     ),
     [1] = LAYOUT(
         QK_BOOT,    _______,    _______,    _______,    _______,    _______,            _______,    _______,    _______,    _______,    _______,    _______,
