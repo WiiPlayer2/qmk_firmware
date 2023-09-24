@@ -14,7 +14,10 @@
     },
     "split": {
         "enabled": true,
-        "soft_serial_pin": "D3"
+        "soft_serial_pin": "D3",
+        "transport": {
+            "sync_matrix_state": true
+        }
     },
     "processor": "atmega32u4",
     "url": "",
@@ -28,7 +31,9 @@
         "split_count": [
             30,
             30
-        ]
+        ],
+        "max_brightness": 1,
+        "timeout": 1000
     },
     "bootmagic": {
         "enabled": true
