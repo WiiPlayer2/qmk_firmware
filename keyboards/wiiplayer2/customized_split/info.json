@@ -16,7 +16,8 @@
         "enabled": true,
         "soft_serial_pin": "D3",
         "transport": {
-            "sync_matrix_state": true
+            "sync_matrix_state": true,
+            "sync_modifiers": true
         }
     },
     "processor": "atmega32u4",
