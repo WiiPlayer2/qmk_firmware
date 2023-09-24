@@ -29,10 +29,10 @@
     "rgb_matrix": {
         "driver": "ws2812",
         "split_count": [ 30, 30 ],
-        "max_brightness": 100,
-        "timeout": 1000,
+        "max_brightness": 160,
+        "timeout": 300000,
         "animations": {
-            "breathing": true
+            "breathing": false
         },
         "layout": [
             {"matrix": [0, 5], "x": 5, "y": 0, "flags": 4},
