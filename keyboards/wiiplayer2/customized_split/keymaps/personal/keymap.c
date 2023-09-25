@@ -10,9 +10,26 @@
 #include "config.h"
 #endif
 
+#include "sendstring_german.h"
+
 #define LY_NAV 1
 #define LY_BRA 2
 #define LY_CFG 3
+
+enum custom_keycodes {
+    M_LAMBDA = SAFE_RANGE,
+};
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case M_LAMBDA:
+            if (record->event.pressed) {
+                SEND_STRING("=>");
+            }
+            break;
+    }
+    return true;
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
@@ -35,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,    _______,    _______,    _______,        _______,    _______,            _______,    _______,    _______,    _______,    _______,    _______,
         _______,    RALT(KC_7), KC_ASTR,    KC_LPRN,        RALT(KC_0), _______,            _______,    _______,    _______,    _______,    _______,    _______,
         _______,    RALT(KC_8), KC_NUBS,    LSFT(KC_NUBS),  RALT(KC_9), _______,            _______,    _______,    _______,    _______,    _______,    _______,
-        _______,    _______,    KC_AMPR,    RALT(KC_MINS),  _______,    _______,            _______,    _______,    _______,    _______,    _______,    _______,
+        _______,    _______,    KC_AMPR,    RALT(KC_MINS),  _______,    M_LAMBDA,           _______,    _______,    _______,    _______,    _______,    _______,
                                             _______,        _______,    _______,            _______,    _______,    _______,
                                             _______,        _______,    _______,            _______,    _______,    _______
     ),
