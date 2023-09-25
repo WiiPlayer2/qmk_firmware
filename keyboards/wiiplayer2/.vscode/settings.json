@@ -8,5 +8,6 @@
             ],
             "url": "https://github.com/qmk/qmk_firmware/raw/master/data/schemas/keyboard.jsonschema"
         }
-    ]
+    ],
+    "git.postCommitCommand": "sync"
 }
