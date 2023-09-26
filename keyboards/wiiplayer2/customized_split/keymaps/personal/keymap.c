@@ -10,17 +10,19 @@
 #include "config.h"
 #endif
 
+#include "keymap_german.h"
 #include "sendstring_german.h"
 
 #define LY_NAV 1
 #define LY_BRA 2
 #define LY_CFG 3
-
-
+#define LY_NUM 4
 
 enum custom_keycodes {
     M_LAMBDA = SAFE_RANGE,
 };
+
+#define MY_QCKAC LCTL(DE_DOT) // quick action
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
@@ -29,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_LEFT_SHIFT,  KC_A,       KC_S,       KC_D,       KC_F,                   KC_G,               KC_H,       KC_J,       KC_K,       KC_L,       KC_SCLN,    KC_QUOT,
         KC_LEFT_CTRL,   KC_Z,       KC_X,       KC_C,       KC_V,                   KC_B,               KC_N,       KC_M,       KC_COMM,    KC_DOT,     KC_SLSH,    KC_NUHS,
                                                 KC_TAB,     KC_HOME,                KC_RALT,            KC_RGUI,    KC_END,     KC_LALT,
-                                                MO(LY_NAV), LT(LY_BRA,KC_SPACE),    KC_BACKSPACE,       KC_DEL,     KC_ENTER,   XXXXXXX
+                                                MO(LY_NAV), LT(LY_BRA,KC_SPACE),    KC_BACKSPACE,       KC_DEL,     KC_ENTER,   MO(LY_NUM)
     ),
     [LY_NAV] = LAYOUT(
         KC_F1,      KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F6,              KC_F7,      KC_F8,      KC_F9,      KC_F10,     KC_F11,     KC_F12,
@@ -37,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,    _______,    _______,    _______,    _______,    _______,            _______,    _______,    _______,    _______,    _______,    KC_VOLU,
         _______,    _______,    _______,    _______,    _______,    _______,            _______,    _______,    _______,    _______,    _______,    KC_VOLD,
                                             _______,    _______,    _______,            _______,    _______,    _______,
-                                            _______,    MO(LY_CFG), _______,            _______,    _______,    _______
+                                            _______,    MO(LY_CFG), _______,            _______,    _______,    MY_QCKAC
     ),
     [LY_BRA] = LAYOUT(
         _______,    _______,        _______,    _______,        _______,    _______,            _______,    _______,    _______,    _______,    _______,    _______,
@@ -54,6 +56,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,    _______,    _______,    _______,    _______,    _______,            RGB_SPD,    RGB_SPI,    _______,    _______,    _______,    _______,
                                             _______,    _______,    _______,            RGB_MOD,    _______,    _______,
                                             _______,    _______,    _______,            QK_BOOT,    _______,    _______
+    ),
+    [LY_NUM] = LAYOUT(
+        _______,    _______,    _______,    _______,    _______,    _______,            _______,    _______,    _______,    _______,    _______,    _______,
+        _______,    _______,    _______,    _______,    _______,    _______,            _______,    _______,    _______,    _______,    _______,    _______,
+        _______,    _______,    _______,    _______,    _______,    _______,            _______,    _______,    _______,    _______,    _______,    _______,
+        _______,    _______,    _______,    _______,    _______,    _______,            _______,    _______,    _______,    _______,    _______,    _______,
+                                            _______,    _______,    _______,            _______,    _______,    _______,
+                                            MY_QCKAC,   _______,    _______,            _______,    _______,    _______
     ),
     // [x] = LAYOUT(
     //     _______,    _______,    _______,    _______,    _______,    _______,            _______,    _______,    _______,    _______,    _______,    _______,
