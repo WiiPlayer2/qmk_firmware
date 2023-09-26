@@ -25,7 +25,8 @@
     "usb": {
         "device_version": "1.0.0",
         "pid": "0x0000",
-        "vid": "0xFEED"
+        "vid": "0xFEED",
+        
     },
     "rgb_matrix": {
         "driver": "ws2812",
@@ -190,6 +191,4 @@
                 {"matrix": [11, 1], "x": 11, "y": 5},
                 {"matrix": [11, 2], "x": 12, "y": 5}
             ]
-        }
-    }
-}
+        
