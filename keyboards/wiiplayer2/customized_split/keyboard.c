@@ -4,6 +4,7 @@
 // only for intellisense
 #include "quantum/quantum.h"
 #include "quantum/rgb_matrix/rgb_matrix_types.h"
+#include "quantum/color.h"
 #include "config.h"
 #endif
 
@@ -28,6 +29,12 @@ bool process_record_keyboard(uint16_t keycode, keyrecord_t *record) {
 bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
     if (get_highest_layer(layer_state) > 0) {
         uint8_t layer = get_highest_layer(layer_state);
+        HSV layer_color_hsv = {
+            .h = rgb_matrix_get_hue() + layer * 32,
+            .s = 255,
+            .v = rgb_matrix_get_val()
+        };
+        RGB layer_color = hsv_to_rgb(layer_color_hsv);
 
         for (uint8_t row = 0; row < MATRIX_ROWS; ++row) {
             for (uint8_t col = 0; col < MATRIX_COLS; ++col) {
@@ -35,7 +42,7 @@ bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
 
                 if (index >= led_min && index < led_max && index != NO_LED &&
                 keymap_key_to_keycode(layer, (keypos_t){col,row}) > KC_TRNS) {
-                    rgb_matrix_set_color(index, RGB_GREEN);
+                    rgb_matrix_set_color(index, layer_color.r, layer_color.g, layer_color.b);
                 }
             }
         }

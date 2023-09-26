@@ -9,5 +9,10 @@
             "url": "https://github.com/qmk/qmk_firmware/raw/master/data/schemas/keyboard.jsonschema"
         }
     ],
-    "git.postCommitCommand": "sync"
+    "git.postCommitCommand": "sync",
+    "files.associations": {
+        "*.gotmpl": "yaml",
+        "color.h": "c",
+        "*.inc": "c"
+    }
 }
