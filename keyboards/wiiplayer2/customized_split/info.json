@@ -34,7 +34,19 @@
         "timeout": 300000,
         "animations": {
             "breathing": false,
-            "solid_reactive": true
+
+            "solid_reactive_simple": true,
+            "solid_reactive": true,
+            "solid_reactive_wide": true,
+            "solid_reactive_multiwide": true,
+            "solid_reactive_cross": true,
+            "solid_reactive_multicross": true,
+            "solid_reactive_nexus": true,
+            "solid_reactive_multinexus": true,
+            "matrix_splash": true,
+            "matrix_multisplash": true,
+            "matrix_solid_splash": true,
+            "matrix_solid_multisplash": true
         },
         "layout": [
             {"matrix": [0, 5], "x": 5, "y": 0, "flags": 4},
