@@ -30,6 +30,7 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
+#ifdef RGB_MATRIX_ENABLE
 bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
     if (!rgb_matrix_indicators_advanced_user(led_min, led_max)) {
         return false;
@@ -64,3 +65,4 @@ bool rgb_matrix_indicators_advanced_kb(uint8_t led_min, uint8_t led_max) {
     }
     return false;
 }
+#endif
