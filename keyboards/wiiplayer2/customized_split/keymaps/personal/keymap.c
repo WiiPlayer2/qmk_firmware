@@ -20,6 +20,7 @@
 
 enum custom_keycodes {
     M_LAMBDA = SAFE_RANGE,
+    M_BCKTCK,
 };
 
 #define MY_QCKAC LCTL(DE_DOT) // quick action
@@ -44,7 +45,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [LY_BRA] = LAYOUT(
         _______,    _______,        _______,    _______,        _______,    _______,            _______,    _______,    _______,    _______,    _______,    _______,
-        _______,    RALT(KC_7),     KC_ASTR,    KC_LPRN,        RALT(KC_0), _______,            _______,    _______,    _______,    _______,    _______,    _______,
+        _______,    RALT(KC_7),     KC_ASTR,    KC_LPRN,        RALT(KC_0), M_BCKTCK,            _______,    _______,    _______,    _______,    _______,    _______,
         _______,    RALT(KC_8),     KC_NUBS,    LSFT(KC_NUBS),  RALT(KC_9), DE_CIRC,            _______,    _______,    _______,    _______,    _______,    _______,
         _______,    RALT(KC_NUBS),  KC_AMPR,    RALT(KC_MINS),  KC_BSLS,    M_LAMBDA,           _______,    _______,    _______,    _______,    _______,    _______,
                                                 _______,        _______,    _______,            _______,    _______,    _______,
@@ -76,13 +77,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // ),
 };
 
+#define MACRO(kc, str) \
+    case kc: if (record->event.pressed) { SEND_STRING(str); } break;
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case M_LAMBDA:
-            if (record->event.pressed) {
-                SEND_STRING("=>");
-            }
-            break;
+        MACRO(M_LAMBDA, "=>")
+        MACRO(M_BCKTCK, "`")
     }
     return true;
 };
