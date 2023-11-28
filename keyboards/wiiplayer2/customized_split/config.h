@@ -32,3 +32,6 @@
 
 #define AUDIO_PIN B6
 #define AUDIO_INIT_DELAY
+
+#define RGB_SHIFT_LAYER_COLOR
+// #define RGB_KEYCODE_COLOR
